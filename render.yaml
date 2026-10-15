@@ -1,0 +1,12 @@
+# Configuración para publicar SEPARALAB en Render (render.com) como servicio web.
+services:
+  - type: web
+    name: separalab
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 60
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5

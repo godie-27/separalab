@@ -1,0 +1,20 @@
+{# Selector de sustancias agrupadas por estado. Requiere la variable "sustancias". #}
+{% set grupos = [('Líquidos', sustancias|selectattr('estado', 'equalto', 'liquido')|list),
+                 ('Sólidos', sustancias|selectattr('estado', 'equalto', 'solido')|rejectattr('categoria')|list),
+                 ('Colorantes (para cromatografía)', sustancias|selectattr('categoria')|list)] %}
+<fieldset class="grupo-sustancias" style="border:0;padding:0;margin:0">
+  <legend class="sr">Sustancias de la mezcla</legend>
+  {% for titulo, lista in grupos %}
+  <h3>{{ titulo }}</h3>
+  <div class="sustancias">
+    {% for s in lista %}
+    <label class="sustancia" title="{{ s.descripcion }}">
+      <input type="checkbox" name="sustancia" value="{{ s.clave }}" data-nombre="{{ s.nombre }}" data-estado="{{ s.estado }}">
+      <span class="muestra" data-muestra="{{ s.clave }}"></span>
+      <span class="nombre">{{ s.nombre }}</span>
+      <span class="formula">{{ s.formula or ('material' if s.tipo == 'material' else '') }}</span>
+    </label>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</fieldset>

@@ -1,0 +1,11 @@
+<svg viewBox="0 0 360 240" role="img" aria-label="Disolución: al añadir agua y agitar, el sólido soluble se disuelve y el insoluble queda como partículas">
+  <path d="M20 222h320" stroke="#14243b" stroke-width="2"/>
+  <path d="M60 70v146a4 4 0 0 0 4 4h112a4 4 0 0 0 4-4V70" fill="#f4f9fd" stroke="#14243b" stroke-width="2"/>
+  <path d="M62 110h116v106a3 3 0 0 1-3 3H65a3 3 0 0 1-3-3z" fill="#cfe6fa"/>
+  <path d="M146 40 108 206" stroke="#14243b" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#d8b98a" stroke="#b0905e"><circle cx="80" cy="210" r="4"/><circle cx="96" cy="212" r="4"/><circle cx="136" cy="211" r="4"/><circle cx="156" cy="209" r="4"/><circle cx="166" cy="213" r="3.5"/></g>
+  <g fill="#ffffff" stroke="#6b7b8f" stroke-width=".8"><rect x="86" y="150" width="4" height="4"/><rect x="130" y="132" width="3" height="3"/><rect x="150" y="170" width="3" height="3"/><rect x="74" y="182" width="3" height="3"/></g>
+  <path d="M182 140h30" stroke="#9aa8b6"/><text x="216" y="136" font-family="inherit" font-size="11.5" fill="#4a5b70">El sólido soluble se</text><text x="216" y="150" font-family="inherit" font-size="11.5" fill="#4a5b70">disuelve (se hidrata)</text>
+  <path d="M182 210h30" stroke="#9aa8b6"/><text x="216" y="206" font-family="inherit" font-size="11.5" fill="#4a5b70">El insoluble queda</text><text x="216" y="220" font-family="inherit" font-size="11.5" fill="#4a5b70">como partículas</text>
+  <text x="152" y="38" font-family="inherit" font-size="11.5" fill="#4a5b70">Varilla para agitar</text>
+</svg>

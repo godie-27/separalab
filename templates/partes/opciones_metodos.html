@@ -1,0 +1,7 @@
+<details class="plegable">
+  <summary>Métodos permitidos</summary>
+  <p class="pequeno atenuado">Desmarca los que no se puedan usar, como en los enunciados que limitan los métodos.</p>
+  {% for m in metodos %}
+  <label class="casilla"><input type="checkbox" name="permitido" value="{{ m.clave }}" checked> <span>{{ m.nombre }}</span></label>
+  {% endfor %}
+</details>

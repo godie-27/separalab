@@ -1,0 +1,15 @@
+<svg viewBox="0 0 360 240" role="img" aria-label="Cristalización: la disolución caliente se enfría lentamente en un cristalizador y se forman cristales">
+  <path d="M20 222h320" stroke="#14243b" stroke-width="2"/>
+  <path d="M40 112v104a4 4 0 0 0 4 4h64a4 4 0 0 0 4-4V112" fill="#f4f9fd" stroke="#14243b" stroke-width="2"/>
+  <path d="M42 140h68v76a3 3 0 0 1-3 3H45a3 3 0 0 1-3-3z" fill="#2f80ed" opacity=".7"/>
+  <text x="34" y="96" font-family="inherit" font-size="11.5" fill="#4a5b70">Disolución caliente</text><text x="34" y="108" font-family="inherit" font-size="11.5" fill="#4a5b70">casi saturada (80 °C)</text>
+  <path d="M126 170h50" stroke="#14243b" stroke-width="2" marker-end="url(#flecha-c)"/>
+  <defs><marker id="flecha-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#14243b"/></marker></defs>
+  <text x="122" y="160" font-family="inherit" font-size="11.5" fill="#4a5b70">se enfría</text>
+  <path d="M188 150h150v66a6 6 0 0 1-6 6H194a6 6 0 0 1-6-6z" fill="#e4eefb" stroke="#14243b" stroke-width="2"/>
+  <path d="M206 170v40a4 4 0 0 0 4 4h102a4 4 0 0 0 4-4v-40" fill="#f4f9fd" stroke="#14243b" stroke-width="2"/>
+  <path d="M208 186h106v24a3 3 0 0 1-3 3H211a3 3 0 0 1-3-3z" fill="#9cc8f0"/>
+  <g fill="#1d64c8" stroke="#134a98"><path d="M222 212l7-14 7 14z"/><path d="M244 212l5-10 6 10z"/><path d="M262 212l8-16 8 16z"/><path d="M286 212l5-9 5 9z"/><path d="M300 212l6-12 6 12z"/></g>
+  <text x="196" y="138" font-family="inherit" font-size="11.5" fill="#4a5b70">Baño frío y cristalizador</text>
+  <text x="214" y="236" font-family="inherit" font-size="11.5" fill="#4a5b70">Cristales (se filtran)</text>
+</svg>

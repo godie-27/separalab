@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block titulo %}Resolver una mezcla{% endblock %}
+{% block contenido %}
+<header class="encabezado-pagina">
+  <h1>Resolver una mezcla</h1>
+  <p>Elige los componentes. SEPARALAB analiza sus propiedades, busca la mejor secuencia de métodos y explica cada operación. Si con los datos disponibles no se puede separar algo, te dice qué falta.</p>
+</header>
+<div class="rejilla-lateral">
+  <form class="hoja pegajoso" id="form-mezcla" novalidate>
+    <h2>Tu mezcla</h2>
+    {% include 'partes/selector.html' %}
+    <details class="plegable" id="bloque-cantidades">
+      <summary>Cantidades (opcional)</summary>
+      <p class="pequeno atenuado">Con las masas y volúmenes, el motor comprueba si la recristalización separa de verdad las sales. Sólidos en gramos, líquidos en mililitros.</p>
+      <div id="campos-cantidades"><p class="pequeno atenuado">Primero elige las sustancias.</p></div>
+    </details>
+    {% include 'partes/opciones_metodos.html' %}
+    <details class="plegable">
+      <summary>Objetivo</summary>
+      <label class="casilla"><input type="checkbox" id="recuperar" checked> <span>Recuperar también el disolvente (si no, se puede evaporar)</span></label>
+    </details>
+    <div class="botones" style="margin-top:16px">
+      <button class="boton" type="submit" id="boton-resolver">Resolver la mezcla</button>
+      <button class="boton discreto" type="button" id="boton-limpiar">Limpiar</button>
+    </div>
+    <div id="error-form" aria-live="polite"></div>
+  </form>
+  <section id="resultado" aria-live="polite">
+    <div class="hoja vacio">
+      <svg viewBox="0 0 100 120" aria-hidden="true"><path d="M18 12h64M23 12v88a8 8 0 0 0 8 8h38a8 8 0 0 0 8-8V12" fill="none" stroke="#14243b" stroke-width="2.2" stroke-linecap="round"/><path d="M24 70h52v30a7 7 0 0 1-7 7H31a7 7 0 0 1-7-7z" fill="#a9d4f5"/><path d="M24 56h52v14H24z" fill="#f2c94c"/></svg>
+      <h2>Elige al menos dos sustancias</h2>
+      <p>Por ejemplo: agua, aceite, arena y sal. Elige una sola si quieres saber si es una sustancia pura.</p>
+    </div>
+  </section>
+</div>
+{% include 'partes/montajes.html' %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/render.js') }}"></script>
+<script src="{{ url_for('static', filename='js/resolver.js') }}"></script>
+{% endblock %}

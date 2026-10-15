@@ -1,0 +1,4 @@
+{# Dibujos de montaje como <template>, para que el JavaScript los inserte en los pasos. #}
+{% for n in ['magnetismo', 'decantacion', 'filtracion', 'sedimentacion', 'destilacion', 'destilacion_fraccionada', 'evaporacion', 'cristalizacion', 'disolucion', 'cromatografia'] %}
+<template id="montaje-{{ n }}">{% include 'montajes/' + n + '.svg' %}</template>
+{% endfor %}

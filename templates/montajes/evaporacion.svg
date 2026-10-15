@@ -1,0 +1,16 @@
+<svg viewBox="0 0 360 240" role="img" aria-label="Evaporación: cápsula de porcelana sobre trípode y rejilla, calentada con un mechero">
+  <path d="M60 228h240" stroke="#14243b" stroke-width="2"/>
+  <path d="M110 120h140" stroke="#14243b" stroke-width="3"/>
+  <path d="M116 117h128" stroke="#4a5b70" stroke-width="2" stroke-dasharray="3 2"/>
+  <path d="M122 120 104 228M238 120l18 108M180 120v108" stroke="#14243b" stroke-width="2"/>
+  <path d="M130 88h100c0 18-22 30-50 30s-50-12-50-30z" fill="#f6f2ea" stroke="#14243b" stroke-width="2"/>
+  <path d="M138 92h84c-3 12-20 20-42 20s-39-8-42-20z" fill="#cfe6fa"/>
+  <g fill="#ffffff" stroke="#9aa8b6"><circle cx="156" cy="98" r="2.4"/><circle cx="176" cy="104" r="2.4"/><circle cx="200" cy="98" r="2.4"/></g>
+  <path d="M160 70c-6-8 6-12 0-20M180 66c-6-8 6-12 0-20M200 70c-6-8 6-12 0-20" fill="none" stroke="#9aa8b6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M170 168h20v52h-20z" fill="#c2cbd4" stroke="#14243b" stroke-width="2"/>
+  <path d="M180 132c9 10 11 18 6 34h-12c-5-16-3-24 6-34z" fill="#5a8dee" stroke="#134a98" stroke-width="1.5"/>
+  <path d="M232 100h40" stroke="#9aa8b6"/><text x="276" y="96" font-family="inherit" font-size="11.5" fill="#4a5b70">Cápsula con</text><text x="276" y="110" font-family="inherit" font-size="11.5" fill="#4a5b70">la disolución</text>
+  <path d="M212 56h60" stroke="#9aa8b6"/><text x="276" y="60" font-family="inherit" font-size="11.5" fill="#4a5b70">El disolvente</text><text x="276" y="74" font-family="inherit" font-size="11.5" fill="#4a5b70">se evapora</text>
+  <path d="M110 126H70" stroke="#9aa8b6"/><text x="18" y="122" font-family="inherit" font-size="11.5" fill="#4a5b70">Trípode y</text><text x="18" y="136" font-family="inherit" font-size="11.5" fill="#4a5b70">rejilla</text>
+  <path d="M168 190h-70" stroke="#9aa8b6"/><text x="30" y="194" font-family="inherit" font-size="11.5" fill="#4a5b70">Mechero</text>
+</svg>

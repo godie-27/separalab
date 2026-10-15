@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block titulo %}Error {{ codigo }}{% endblock %}
+{% block contenido %}
+<div class="hoja vacio">
+  <h1>{{ codigo }}</h1>
+  <p>{{ mensaje }}</p>
+  <a class="boton" href="{{ url_for('separalab.inicio') }}">Volver al inicio</a>
+</div>
+{% endblock %}

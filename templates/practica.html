@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block titulo %}Practicar{% endblock %}
+{% block contenido %}
+<header class="encabezado-pagina">
+  <h1>Practica con tu propia mezcla</h1>
+  <p>Elige los componentes y resuélvela tú: decide qué método aplicar a cada fracción, qué esperas recuperar, qué material necesitas y en qué orden van los pasos. SEPARALAB evalúa cada decisión y te explica el razonamiento químico.</p>
+</header>
+<div id="configuracion" class="rejilla-lateral">
+  <form class="hoja" id="form-practica" novalidate>
+    <h2>Prepara la mezcla</h2>
+    {% include 'partes/selector.html' %}
+    {% include 'partes/opciones_metodos.html' %}
+    <div class="botones" style="margin-top:16px"><button class="boton" type="submit">Empezar la práctica</button></div>
+    <div id="error-practica" aria-live="polite"></div>
+  </form>
+  <aside class="hoja">
+    <h2>Cómo se puntúa</h2>
+    <ul>
+      <li><b>+10</b> elección óptima a la primera, <b>+6</b> válida pero no la mejor, <b>+2</b> posible pero empeora el resultado.</li>
+      <li><b>−2</b> por cada método que no se puede aplicar (te explicamos por qué).</li>
+      <li><b>+2</b> si aciertas qué componentes se separan en el paso.</li>
+      <li><b>+3</b> material correcto y <b>+3</b> procedimiento bien ordenado.</li>
+      <li><b>−1</b> por cada pista.</li>
+    </ul>
+    <p class="atenuado">Puede haber varias secuencias correctas: se acepta cualquier decisión químicamente coherente.</p>
+    <p>¿Prefieres un ejercicio ya preparado? <a href="{{ url_for('separalab.retos') }}">Prueba un reto</a>.</p>
+  </aside>
+</div>
+<section id="practica" class="oculto" aria-live="polite"></section>
+{% include 'partes/montajes.html' %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/render.js') }}"></script>
+<script src="{{ url_for('static', filename='js/practica-motor.js') }}"></script>
+<script src="{{ url_for('static', filename='js/practica.js') }}"></script>
+{% endblock %}

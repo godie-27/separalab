@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block titulo %}Videos{% endblock %}
+{% block contenido %}
+<header class="encabezado-pagina">
+  <h1>Videos de las técnicas</h1>
+  <p>{{ total }} videos comprobados de fuentes educativas fiables. Se abren en su página original, donde se pueden ver respetando su licencia. Antes de verlos, lee qué conviene observar.</p>
+</header>
+{% for g in grupos %}
+<section class="hoja">
+  <h2>{{ g.nombre }}</h2>
+  {% if g.videos %}
+  <div class="videos">
+    {% for v in g.videos %}
+    <article class="video">
+      <h3 style="font-size:1.05rem;margin:0">{{ v.titulo }}</h3>
+      <p class="meta">{{ v.fuente }} · {{ v.idioma }} · Licencia: {{ v.licencia }}</p>
+      <p><b>Qué observar:</b> {{ v.observar }}</p>
+      <p><a class="boton secundario" href="{{ v.url }}" target="_blank" rel="noopener">Ver el video en su web</a></p>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="sin-video">Todavía no hay un video verificado para este método. Mientras tanto, mira su montaje en el <a href="{{ url_for('separalab.laboratorio') }}#{{ g.clave }}">laboratorio visual</a>.</p>
+  {% endif %}
+</section>
+{% endfor %}
+<p class="pequeno atenuado">Para añadir un video: edita <code>datos/recursos.py</code>, comprueba que el enlace funciona e indica su fuente y licencia.</p>
+{% endblock %}

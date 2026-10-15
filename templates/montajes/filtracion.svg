@@ -1,0 +1,20 @@
+<svg viewBox="0 0 360 240" role="img" aria-label="Montaje de filtración: embudo con papel de filtro en un soporte, varilla para verter y matraz que recoge el filtrado">
+  <path d="M30 228h180M60 228V14" stroke="#14243b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 92h50" stroke="#14243b" stroke-width="2"/>
+  <ellipse cx="136" cy="94" rx="26" ry="5" fill="none" stroke="#14243b" stroke-width="2"/>
+  <path d="M96 58h80l-34 46v34h-12v-34z" fill="#f4f9fd" stroke="#14243b" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M102 61h68l-34 42z" fill="#ffffff" stroke="#9aa8b6" stroke-width="1.5"/>
+  <path d="M112 72h48l-12 16h-24z" fill="#d8b98a"/>
+  <g fill="#b0905e"><circle cx="122" cy="78" r="2"/><circle cx="134" cy="82" r="2"/><circle cx="146" cy="77" r="2"/><circle cx="140" cy="86" r="2"/></g>
+  <path d="M188 20 150 66" stroke="#14243b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M176 14l38 8-6 22-34-10z" fill="#f4f9fd" stroke="#14243b" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M178 26l30 6-3 10-28-8z" fill="#c7a77a"/>
+  <path d="M136 140v20" stroke="#9cc8f0" stroke-width="3" stroke-dasharray="3 3"/>
+  <path d="M128 150h16v16l20 44a6 6 0 0 1-5 8h-42a6 6 0 0 1-5-8l20-44z" fill="#f4f9fd" stroke="#14243b" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M117 190h38l9 20a5 5 0 0 1-5 7h-46a5 5 0 0 1-5-7z" fill="#cfe6fa"/>
+  <path d="M206 36h30" stroke="#9aa8b6"/><text x="240" y="40" font-family="inherit" font-size="11.5" fill="#4a5b70">Mezcla que se vierte</text>
+  <path d="M168 50h68" stroke="#9aa8b6"/><text x="240" y="56" font-family="inherit" font-size="11.5" fill="#4a5b70">Varilla de vidrio</text>
+  <path d="M158 80h78" stroke="#9aa8b6"/><text x="240" y="78" font-family="inherit" font-size="11.5" fill="#4a5b70">Residuo: sólido</text><text x="240" y="92" font-family="inherit" font-size="11.5" fill="#4a5b70">insoluble en el papel</text>
+  <path d="M150 120h86" stroke="#9aa8b6"/><text x="240" y="118" font-family="inherit" font-size="11.5" fill="#4a5b70">Embudo y papel</text><text x="240" y="132" font-family="inherit" font-size="11.5" fill="#4a5b70">de filtro</text>
+  <path d="M164 200h72" stroke="#9aa8b6"/><text x="240" y="196" font-family="inherit" font-size="11.5" fill="#4a5b70">Filtrado: líquido y</text><text x="240" y="210" font-family="inherit" font-size="11.5" fill="#4a5b70">lo que lleva disuelto</text>
+</svg>

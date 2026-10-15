@@ -1,0 +1,15 @@
+<svg viewBox="0 0 360 240" role="img" aria-label="Montaje de separación magnética: un imán recubierto atrae las limaduras de hierro de la mezcla">
+  <path d="M60 200h240" stroke="#14243b" stroke-width="2"/>
+  <path d="M95 140h170l-12 58H107z" fill="#f4f9fd" stroke="#14243b" stroke-width="2" stroke-linejoin="round"/>
+  <g fill="#f2d22e"><circle cx="125" cy="186" r="3"/><circle cx="140" cy="190" r="3"/><circle cx="160" cy="184" r="3"/><circle cx="182" cy="190" r="3"/><circle cx="205" cy="185" r="3"/><circle cx="226" cy="189" r="3"/><circle cx="240" cy="183" r="3"/><circle cx="150" cy="178" r="3"/><circle cx="196" cy="178" r="3"/></g>
+  <g fill="#5b6470"><circle cx="132" cy="182" r="2.4"/><circle cx="214" cy="181" r="2.4"/><circle cx="172" cy="187" r="2.4"/></g>
+  <path d="M150 30v52a30 30 0 0 0 60 0V30h-18v52a12 12 0 0 1-24 0V30z" fill="#e5484d" stroke="#14243b" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M150 30h18v16h-18zM192 30h18v16h-18z" fill="#c2cbd4" stroke="#14243b" stroke-width="2"/>
+  <path d="M146 26h68v90h-68z" fill="none" stroke="#9aa8b6" stroke-dasharray="4 3"/>
+  <g fill="#5b6470"><circle cx="160" cy="118" r="2.6"/><circle cx="167" cy="122" r="2.6"/><circle cx="176" cy="121" r="2.6"/><circle cx="186" cy="122" r="2.6"/><circle cx="195" cy="119" r="2.6"/><circle cx="181" cy="126" r="2.6"/><circle cx="171" cy="127" r="2.6"/></g>
+  <path d="M180 140v-6" stroke="#4a5b70" stroke-dasharray="2 2"/>
+  <path d="M222 60h40" stroke="#9aa8b6"/><text x="266" y="64" font-family="inherit" font-size="11.5" fill="#4a5b70">Imán</text>
+  <path d="M216 100h46" stroke="#9aa8b6"/><text x="266" y="96" font-family="inherit" font-size="11.5" fill="#4a5b70">Papel o bolsa</text><text x="266" y="110" font-family="inherit" font-size="11.5" fill="#4a5b70">que lo recubre</text>
+  <path d="M150 124h-50" stroke="#9aa8b6"/><text x="18" y="120" font-family="inherit" font-size="11.5" fill="#4a5b70">Limaduras</text><text x="18" y="134" font-family="inherit" font-size="11.5" fill="#4a5b70">atraídas</text>
+  <path d="M250 186h20" stroke="#9aa8b6"/><text x="274" y="182" font-family="inherit" font-size="11.5" fill="#4a5b70">Componente no</text><text x="274" y="196" font-family="inherit" font-size="11.5" fill="#4a5b70">magnético</text>
+</svg>

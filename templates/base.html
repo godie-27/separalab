@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="SEPARALAB: laboratorio digital para aprender a separar mezclas, practicar con retos y estudiar cromatografía.">
+  <title>{% block titulo %}SEPARALAB{% endblock %} · SEPARALAB</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/logo.svg') }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/separalab.css') }}">
+</head>
+<body>
+  {% include 'partes/iconos.svg' %}
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="{{ url_for('separalab.inicio') }}" aria-label="SEPARALAB, inicio">
+        <svg aria-hidden="true"><use href="#logo"/></svg><span>SEPARA<b>LAB</b></span>
+      </a>
+      <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+      <nav class="menu" id="menu-principal" aria-label="Módulos">
+        {% set enlaces = [('resolver', 'Resolver'), ('practica', 'Practicar'), ('retos', 'Retos'), ('cromatografia', 'Cromatografía'), ('laboratorio', 'Laboratorio'), ('videos', 'Videos')] %}
+        {% for ruta, texto in enlaces %}
+        <a href="{{ url_for('separalab.' + ruta) }}" {% if activo == ruta %}aria-current="page"{% endif %}>{{ texto }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <div class="contenedor">
+      {% block contenido %}{% endblock %}
+    </div>
+  </main>
+  <footer class="pie">
+    <div class="contenedor">
+      <span>SEPARALAB · laboratorio digital de separación de mezclas · 4.º y 5.º de secundaria</span>
+      <span>Los resultados dependen de las propiedades y reglas registradas; los valores numéricos son aproximados.</span>
+    </div>
+  </footer>
+  <noscript><div class="contenedor"><p class="aviso atencion">SEPARALAB necesita JavaScript activado para resolver mezclas y practicar.</p></div></noscript>
+  <script src="{{ url_for('static', filename='js/comun.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block titulo %}Cromatografía{% endblock %}
+{% block contenido %}
+<header class="encabezado-pagina">
+  <h1>Cromatografía</h1>
+  <p>Técnica para separar e identificar los componentes de una mezcla, como los colorantes de una tinta, aprovechando su distinta afinidad por dos fases. Aquí aprenderás a medir distancias, calcular el factor de retención (Rf) e interpretar cromatogramas.</p>
+</header>
+
+<section class="hoja">
+  <div class="rejilla-2">
+    <div>
+      <h2>Cómo funciona</h2>
+      <p>Hay una <b>fase estacionaria</b>, que no se mueve, y una <b>fase móvil</b>, un líquido que avanza a través de ella. Cada componente de la mezcla se reparte entre las dos fases según su solubilidad en cada una, que depende de las fuerzas intermoleculares. El componente con más afinidad por la fase móvil avanza más deprisa; el que interacciona más con la fase estacionaria se queda atrás. Este proceso se llama <b>elución</b>.</p>
+      <h3>En papel</h3>
+      <p>El papel de cromatografía contiene moléculas de agua unidas por enlaces de hidrógeno a los grupos –OH de la celulosa: esa capa de agua es la fase estacionaria. La fase móvil es un líquido o mezcla de líquidos menos polar que el agua.</p>
+      <p>La muestra se aplica en una <b>línea de origen</b> trazada con lápiz cerca del borde inferior. El papel se coloca en una cámara con un poco de disolvente, siempre por debajo de la línea de origen. La <b>tapa</b> satura la atmósfera de vapor y evita que el disolvente se evapore. El resultado es un <b>cromatograma</b>.</p>
+      <h3>En capa fina (TLC)</h3>
+      <p>Funciona igual, pero la fase estacionaria es una capa uniforme de sílice (SiO₂) o alúmina (Al₂O₃) sobre vidrio, metal o plástico. Sus superficies tienen grupos –OH: son polares y forman enlaces de hidrógeno con los componentes de la muestra. Con un disolvente apolar, los componentes más polares avanzan menos.</p>
+    </div>
+    <div>
+      <div class="montaje">{% include 'montajes/cromatografia.svg' %}</div>
+      <div style="overflow-x:auto">
+      <table class="dato-tabla" style="margin-top:12px">
+        <thead><tr><th></th><th>Papel</th><th>Capa fina (TLC)</th></tr></thead>
+        <tbody>
+          <tr><th>Fase estacionaria</th><td>Agua unida a la celulosa</td><td>Sílice o alúmina (polares)</td></tr>
+          <tr><th>Fase móvil</th><td>Líquido menos polar que el agua</td><td>Disolvente o mezcla de disolventes</td></tr>
+          <tr><th>Uso típico</th><td>Tintas, colorantes alimentarios, pigmentos</td><td>Identificar compuestos orgánicos</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hoja">
+  <h2>Factor de retención, Rf</h2>
+  <div class="formula-rf" role="math" aria-label="Rf igual a distancia recorrida por la mancha dividida entre distancia recorrida por el frente del disolvente">
+    R<sub>f</sub> =
+    <span class="fraccion-mat"><span>distancia recorrida por la mancha</span><span>distancia recorrida por el frente del disolvente</span></span>
+  </div>
+  <ul>
+    <li>Las dos distancias se miden desde la <b>misma línea de origen</b> (hasta el centro de la mancha).</li>
+    <li>Rf no tiene unidades (cm/cm) y en un cromatograma bien medido está entre 0 y 1.</li>
+    <li>Rf <b>no es una constante universal</b>: depende de la fase estacionaria, del disolvente y de la temperatura. Solo se pueden comparar valores obtenidos en las mismas condiciones.</li>
+    <li>Algunas fichas lo llaman «coeficiente de reparto». En los apuntes es el factor de retardo o retención: está relacionado con el reparto entre fases, pero no es lo mismo que el coeficiente de reparto, que compara concentraciones.</li>
+  </ul>
+</section>
+
+<section class="hoja">
+  <h2>Calculadora de Rf</h2>
+  <div class="rejilla-2">
+    <form id="form-rf" novalidate>
+      <div class="campo"><label for="rf-frente">Distancia del frente del disolvente (cm)</label><input id="rf-frente" type="text" inputmode="decimal" value="12,0"></div>
+      <p><b>Manchas</b> (distancia desde el origen, en cm)</p>
+      <div class="calc-filas" id="rf-filas"></div>
+      <div class="botones" style="margin-top:10px">
+        <button class="boton discreto" type="button" id="rf-anadir">Añadir mancha</button>
+        <button class="boton" type="submit">Calcular</button>
+      </div>
+      <div id="rf-resultado" aria-live="polite"></div>
+    </form>
+    <div id="rf-dibujo"></div>
+  </div>
+</section>
+
+<section class="hoja">
+  <h2>Ejercicios de las fichas</h2>
+  <p class="atenuado">Calcula el Rf de las manchas que se piden (redondea a dos decimales) y responde las preguntas.</p>
+  <div id="ejercicios"></div>
+</section>
+
+<section class="hoja">
+  <h2>{{ identificacion.titulo }}</h2>
+  <div class="ejercicio-croma">
+    <div id="ident-dibujo"></div>
+    <div>
+      <p>{{ identificacion.condiciones }} ¿Qué patrones contiene la muestra problema?</p>
+      <div id="ident-opciones"></div>
+      <div class="botones"><button class="boton secundario" type="button" id="ident-comprobar">Comprobar</button></div>
+      <div id="ident-resultado" aria-live="polite"></div>
+      <p class="pequeno atenuado">Datos inventados con fines didácticos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hoja">
+  <h2>Preguntas de razonamiento</h2>
+  <div id="conceptuales"></div>
+</section>
+
+<section class="hoja">
+  <h2>Simulación</h2>
+  <p>Observa cómo asciende el frente del disolvente y cómo cada componente recorre una fracción fija de esa distancia: su Rf en esas condiciones. Si cambias el disolvente o el papel, los Rf cambian.</p>
+  <div class="ejercicio-croma">
+    <div id="sim-dibujo"></div>
+    <div>
+      <div class="campo"><label for="sim-preset">Muestra y condiciones</label><select id="sim-preset"></select></div>
+      <p id="sim-condiciones" class="atenuado"></p>
+      <div class="campo"><label for="sim-tiempo">Avance del disolvente</label><input id="sim-tiempo" type="range" min="0" max="100" value="0"></div>
+      <div class="simulador-controles"><button class="boton" type="button" id="sim-play">Iniciar</button><button class="boton discreto" type="button" id="sim-reset">Reiniciar</button></div>
+      <div id="sim-datos" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="hoja">
+  <h2>Factores que influyen en el resultado</h2>
+  <ul>
+    <li><b>El disolvente (fase móvil):</b> cambia la solubilidad de cada componente y, por tanto, todos los Rf.</li>
+    <li><b>La fase estacionaria:</b> el tipo de papel o placa (sílice o alúmina) cambia las interacciones.</li>
+    <li><b>La saturación de la cámara:</b> sin tapa, el disolvente se evapora del papel y el frente avanza de forma irregular.</li>
+    <li><b>La temperatura:</b> modifica la solubilidad y la velocidad de avance.</li>
+    <li><b>El tamaño de la gota:</b> una mancha grande se alarga y se solapa con las vecinas; conviene aplicar gotas pequeñas y dejar secar.</li>
+    <li><b>La posición del origen:</b> debe quedar por encima del nivel del disolvente y trazarse con lápiz.</li>
+    <li><b>El tiempo:</b> hay que retirar el papel antes de que el disolvente llegue al borde y marcar el frente enseguida.</li>
+  </ul>
+</section>
+
+<script type="application/json" id="datos-ejercicios">{{ ejercicios|tojson }}</script>
+<script type="application/json" id="datos-preguntas">{{ preguntas|tojson }}</script>
+<script type="application/json" id="datos-ident">{{ identificacion|tojson }}</script>
+<script type="application/json" id="datos-sim">{{ simulaciones|tojson }}</script>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/cromatografia.js') }}"></script>{% endblock %}

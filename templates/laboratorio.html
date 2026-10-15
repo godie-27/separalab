@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block titulo %}Laboratorio visual{% endblock %}
+{% block contenido %}
+<header class="encabezado-pagina">
+  <h1>Laboratorio visual</h1>
+  <p>Cada método con su montaje, el material que necesita, la función de cada pieza y el procedimiento. Todos los dibujos son originales de SEPARALAB.</p>
+</header>
+<nav class="indice-metodos" aria-label="Métodos">
+  {% for m in metodos %}<a href="#{{ m.clave }}">{{ m.nombre.split(' (')[0] }}</a>{% endfor %}
+  <a href="#material">Material de laboratorio</a>
+</nav>
+{% for m in metodos %}
+<article class="hoja ficha-metodo" id="{{ m.clave }}">
+  <div class="cabeza">
+    <div>
+      <h2>{{ m.nombre }}</h2>
+      <p><b>Propiedad que aprovecha:</b> {{ m.propiedad }}.</p>
+      <p><b>Cuándo se usa:</b> {{ m.cuando }}</p>
+      <p>{{ m.fundamento }}</p>
+      <h3>Procedimiento</h3>
+      <ol>{% for p in m.procedimiento %}<li>{{ p }}</li>{% endfor %}</ol>
+      {% if m.precauciones %}<h3>Precauciones</h3><ul>{% for p in m.precauciones %}<li>{{ p }}</li>{% endfor %}</ul>{% endif %}
+      {% if m.limitaciones %}<h3>Limitaciones</h3><ul>{% for p in m.limitaciones %}<li>{{ p }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+    <div>
+      <div class="montaje">{% include 'montajes/' + m.montaje + '.svg' %}</div>
+      <h3 style="margin-top:14px">Material</h3>
+      <div class="materiales">
+        {% for x in m.materiales_info %}
+        <div class="material" title="{{ x.funcion }}"><svg aria-hidden="true"><use href="#i-{{ x.icono }}"/></svg><span>{{ x.nombre }}</span></div>
+        {% endfor %}
+      </div>
+      <details class="plegable"><summary>¿Para qué sirve cada pieza?</summary>
+        <ul>{% for x in m.materiales_info %}<li><b>{{ x.nombre }}:</b> {{ x.funcion }}</li>{% endfor %}</ul>
+      </details>
+      <h3 style="margin-top:14px">Qué observar</h3>
+      <p>{{ m.observar }}</p>
+      {% if m.videos %}
+      <p>{% for v in m.videos %}<a href="{{ v.url }}" target="_blank" rel="noopener">Ver video: {{ v.titulo }}</a> <span class="pequeno atenuado">({{ v.idioma }})</span>{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+      {% else %}
+      <p class="sin-video">Todavía no hay un video verificado para este método.</p>
+      {% endif %}
+    </div>
+  </div>
+</article>
+{% endfor %}
+<section class="hoja" id="material">
+  <h2>Material de laboratorio</h2>
+  <p class="atenuado">Pasa el cursor o mantén pulsado sobre cada pieza para ver su función.</p>
+  <div class="materiales">
+    {% for x in materiales %}
+    <div class="material" title="{{ x.funcion }}"><svg aria-hidden="true"><use href="#i-{{ x.icono }}"/></svg><span>{{ x.nombre }}</span><span class="pequeno atenuado">{{ x.funcion }}</span></div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

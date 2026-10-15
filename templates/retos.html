@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block titulo %}Retos{% endblock %}
+{% block contenido %}
+<header class="encabezado-pagina">
+  <h1>Retos de separación</h1>
+  <p>Ejercicios comprobados con el motor químico: cada uno tiene una solución defendible con los datos del enunciado. Varios proceden de tus fichas de clase. Resuélvelos paso a paso, pide pistas si te atascas y responde las preguntas de razonamiento.</p>
+</header>
+<div class="pestanas" role="tablist" aria-label="Nivel de dificultad">
+  <button type="button" role="tab" data-nivel="" aria-selected="true">Todos</button>
+  {% for clave, nombre in niveles.items() %}
+  <button type="button" role="tab" data-nivel="{{ clave }}" aria-selected="false">{{ nombre }}</button>
+  {% endfor %}
+</div>
+<div class="rejilla-lateral">
+  <aside class="hoja">
+    <h2>Elige un reto</h2>
+    <div class="lista-retos" id="lista-retos"></div>
+    <div class="botones" style="margin-top:12px"><button class="boton secundario ancho" type="button" id="boton-aleatorio">Reto al azar de este nivel</button></div>
+  </aside>
+  <section id="reto" aria-live="polite">
+    <div class="hoja vacio"><h2>Elige un reto de la lista</h2><p>O pulsa «Reto al azar» para que SEPARALAB elija uno por ti.</p></div>
+  </section>
+</div>
+<script type="application/json" id="datos-retos">{{ retos|tojson }}</script>
+<script type="application/json" id="datos-sustancias">{{ sustancias|tojson }}</script>
+{% include 'partes/montajes.html' %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/render.js') }}"></script>
+<script src="{{ url_for('static', filename='js/practica-motor.js') }}"></script>
+<script src="{{ url_for('static', filename='js/retos.js') }}"></script>
+{% endblock %}

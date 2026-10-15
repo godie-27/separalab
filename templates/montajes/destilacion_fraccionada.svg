@@ -1,0 +1,17 @@
+<svg viewBox="0 0 360 272" role="img" aria-label="Montaje de destilación fraccionada: columna de fraccionamiento entre el matraz y el refrigerante">
+  <path d="M10 228h340" stroke="#14243b" stroke-width="2"/>
+  <rect x="30" y="196" width="80" height="26" rx="4" fill="#e9eef3" stroke="#14243b" stroke-width="2"/><rect x="38" y="190" width="64" height="6" fill="#e5484d"/>
+  <circle cx="70" cy="160" r="28" fill="#f4f9fd" stroke="#14243b" stroke-width="2"/>
+  <path d="M46 170a28 28 0 0 0 48 0z" fill="#c9b8f0"/>
+  <rect x="62" y="56" width="16" height="78" rx="3" fill="#e4eefb" stroke="#14243b" stroke-width="2"/>
+  <g stroke="#14243b" stroke-width="1"><path d="M63 68h14M63 80h14M63 92h14M63 104h14M63 116h14"/></g>
+  <path d="M70 18v46" stroke="#14243b" stroke-width="2"/><circle cx="70" cy="60" r="3.5" fill="#e5484d" stroke="#14243b"/>
+  <path d="M78 58l128 62-7 13L72 70z" fill="#e4eefb" stroke="#14243b" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M204 126l8 14" stroke="#14243b" stroke-width="2"/>
+  <path d="M206 144h12v10l14 22a4 4 0 0 1-3 6h-34a4 4 0 0 1-3-6l14-22z" fill="#f4f9fd" stroke="#14243b" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M200 168h24l7 10a3 3 0 0 1-3 4h-32a3 3 0 0 1-3-4z" fill="#c9b8f0"/>
+  <path d="M62 100H20V250h12" fill="none" stroke="#9aa8b6"/><text x="36" y="248" font-family="inherit" font-size="11.5" fill="#4a5b70">Columna de fraccionamiento: el vapor se condensa</text><text x="36" y="262" font-family="inherit" font-size="11.5" fill="#4a5b70">y se vuelve a evaporar muchas veces</text>
+  <text x="84" y="26" font-family="inherit" font-size="11.5" fill="#4a5b70">Termómetro</text>
+  <text x="240" y="176" font-family="inherit" font-size="11.5" fill="#4a5b70">Fracción más volátil</text>
+  <text x="246" y="62" font-family="inherit" font-size="11.5" fill="#4a5b70">Refrigerante</text><path d="M196 92l46-26" stroke="#9aa8b6"/>
+</svg>

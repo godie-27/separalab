@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block titulo %}Separa mezclas y entiende por qué{% endblock %}
+{% block contenido %}
+<section class="portada">
+  <div>
+    <h1>Separa mezclas y entiende por qué funciona cada paso.</h1>
+    <p class="entrada">Elige los componentes de una mezcla y SEPARALAB razona qué método usar, en qué orden y qué recuperas en cada etapa. Después, practica resolviéndolo tú.</p>
+    <div class="botones">
+      <a class="boton" href="{{ url_for('separalab.resolver') }}">Resolver una mezcla</a>
+      <a class="boton secundario" href="{{ url_for('separalab.retos') }}">Probar un reto</a>
+    </div>
+    <div class="cifras">
+      <div><b>{{ num_sustancias }}</b>sustancias con propiedades</div>
+      <div><b>{{ num_metodos }}</b>métodos de separación</div>
+      <div><b>{{ num_retos }}</b>retos comprobados</div>
+    </div>
+  </div>
+  <figure class="ilustracion" aria-labelledby="pie-portada">
+    <div id="demo-portada" class="demo"></div>
+    <figcaption id="pie-portada" class="pequeno atenuado" style="text-align:center;margin-top:8px">
+      Agua, aceite, arena y sal: decantación, filtración y destilación separan cada componente.
+    </figcaption>
+  </figure>
+</section>
+
+<h2>Módulos</h2>
+<div class="modulos">
+  <a class="modulo principal" href="{{ url_for('separalab.resolver') }}">
+    <svg aria-hidden="true"><use href="#m-resolver"/></svg>
+    <div><h3>Resolver una mezcla</h3><p>Solución paso a paso: método, propiedad física, por qué se hace en ese momento, materiales, procedimiento, qué se recupera y qué limitaciones tiene. Si una mezcla no se puede resolver, te dice qué falta.</p></div>
+  </a>
+  <a class="modulo" href="{{ url_for('separalab.practica') }}">
+    <svg aria-hidden="true"><use href="#m-practica"/></svg>
+    <div><h3>Practicar</h3><p>Resuelve tú la mezcla: elige métodos, materiales y pasos, y recibe una corrección razonada.</p></div>
+  </a>
+  <a class="modulo" href="{{ url_for('separalab.retos') }}">
+    <svg aria-hidden="true"><use href="#m-retos"/></svg>
+    <div><h3>Retos</h3><p>Ejercicios de básico a desafío, incluidos los de las fichas de clase, con pistas progresivas.</p></div>
+  </a>
+  <a class="modulo" href="{{ url_for('separalab.cromatografia') }}">
+    <svg aria-hidden="true"><use href="#m-cromatografia"/></svg>
+    <div><h3>Cromatografía</h3><p>Fases, factor de retención (Rf), ejercicios de las fichas y una simulación.</p></div>
+  </a>
+  <a class="modulo" href="{{ url_for('separalab.laboratorio') }}">
+    <svg aria-hidden="true"><use href="#m-laboratorio"/></svg>
+    <div><h3>Laboratorio visual</h3><p>Montajes dibujados, material y función de cada pieza.</p></div>
+  </a>
+  <a class="modulo" href="{{ url_for('separalab.videos') }}">
+    <svg aria-hidden="true"><use href="#m-videos"/></svg>
+    <div><h3>Videos</h3><p>Videos verificados de cada técnica y qué observar en ellos.</p></div>
+  </a>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/inicio.js') }}"></script>{% endblock %}
